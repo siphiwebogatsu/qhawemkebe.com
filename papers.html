@@ -20,6 +20,62 @@
       ga('create', 'UA-65546321-1', 'auto');
       ga('send', 'pageview');
     </script> 
+ <style>
+      button.accordion2 {
+      font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      cursor: pointer;
+      padding: 0px;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 100%;
+      transition: 0.4s;
+      background-color: #f8f8f8;
+      }
+      button.accordion {
+      font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      cursor: pointer;
+      padding: 0px;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 100%;
+      transition: 0.4s;
+      background-color: #f8f8f8;
+      }
+      button.accordion.active, button.accordion:hover {
+      background-color: #f8f8f8;
+      }
+      button.accordion:after {
+      content: '[+]';
+      font-size: 90%;
+      color:#777;
+      float: left;
+      margin-left: 1px;
+      }
+
+      button.accordion2:after {
+      content: '[#]';
+      font-size: 90%;
+      color:#777;
+      float: left;
+      margin-left: 1px;
+      }
+
+      button.accordion.active:after {
+      content: "[\2212]";
+      }
+      div.panel {
+      padding: 0 20px;
+      margin-top: 5px;
+      display: none;
+      background-color: white;
+      font-size: 100%;
+      }
+      div.panel.show {
+      display: block !important;
+      }
+    </style>
   </head>
 <body>	
 <div class="wrapper">
@@ -51,12 +107,23 @@
 	</p> 
 	
 	<h3><a id="recent-papers" class="anchor" href="#recent-papers" aria-hidden="true"><span class="octicon octicon-link"></span></a><b>Works in Progress:</b></h3>
+	<p> The Impact of Childhood Exposure to the Great Recession on Adult Criminal Justice Involvement (with James Reeves)</p>p>
 	<p>The Legalization of Collective Bargaining at Nonprofit Hospitals</p>
 	<p>Minimum Wages and Cross-State Labor Market Flows (with <a href="https://lsa.umich.edu/econ/people/phd-students/emir-murathanoglu.html">Emir Murathanoglu</a>) </p>
-	<p>Understanding Non-Traditional Work Arrangements in the United States (with <a href="https://sites.google.com/site/joelleabramowitz/home?authuser=0">Joelle Abramowitz</a>) </p>
-	</section>
+   	</section>
 
     </div>
-	<script src="javascripts/scale.fix.js"></script>
+<script src="javascripts/scale.fix.js"></script>
+    <script> 
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.parentNode.nextElementSibling.classList.toggle("show");
+      }
+    }
+    </script>
 	</body>
 </html>
